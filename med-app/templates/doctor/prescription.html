@@ -1,0 +1,16 @@
+{% extends "doctor/dashboard.html"%}
+{% block dashboard_content %}
+     <div class="container">
+        <div class="card  shadow-sm">
+            <div class="card-title"><h3>Prescription Createt At {{ presc.created_at }}</h3></div>
+            <div class="card-body">
+                <div class="">
+                    <h4>Note</h4>
+                    <p class="">
+                       {{ presc.prescription }}
+                    </p>
+                </div>
+            </div>
+        </div>
+     </div>
+{% endblock %}

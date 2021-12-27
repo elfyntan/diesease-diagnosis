@@ -1,0 +1,38 @@
+{% extends "admin/dashboard.html" %}
+{% block dashboard_content %}
+     <div class="container">
+        <div class="card  shadow-sm ">
+            <div class="card-body">
+    <div class="container book-appointment">
+    <div class="clearfix pr-4 p-1">
+        <span class="text-14 font-weight7" style="margin-left: 20px">MANAGE SPECIALISATIONS</span>
+        <a href="/admin/add-specialisation" class="btn bg-blue btn-sm text-white pull-right w-25 font-weight9 text-13 text-uppercase">Add Specialisation</a>
+    </div>
+        <div class="d-flex justify-content-center ">
+            <div class="col-md-10">
+                <div class="row">
+                    {% for spec in specs %}
+                        <div class="col-md-4 p-1 col-lg-4">
+                            <div class="card img-card p-1 shadow">
+                               <div class="card-body p-1">
+                                    <div class="caption text-center">
+                                        <p class="m-1 font-weight8 text-14">{{ spec }}</p>
+                                    </div>
+                                   <div class="d-flex justify-content-center tex-center">
+                                       <div class="image ">
+                                            <img src="{{ url_for('static',filename='uploads/'+spec.image)}}">
+                                        </div>
+                                   </div>
+                               </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+        </div>
+    </div>
+            </div>
+        </div>
+     </div>
+{% endblock %}

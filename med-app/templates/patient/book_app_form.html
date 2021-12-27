@@ -1,0 +1,76 @@
+{% extends "patient/dashboard.html" %}
+{% block dashboard_content %}
+    <div class="container">
+        <div class="card">
+            <div class="card-body ">
+                <div class="d-flex justify-content-center">
+
+                <div class="col-md-5 p-2">
+                    <h4 class="text-center font-weight7 text-15">BOOK APPOINTMENT</h4>
+                    <form action="{{ url_for("patient.save_appointment") }}" method=post role="form" style="width: 400px">
+                        <div class="form-group m-2">
+                            <label class="text-13 font-weight6">Service</label>
+                            <input type="text"id="service"class="form-control rounded-0" disabled value="{{ data.spec }}" required>
+
+                        </div>
+                        <div class="form-group  m-2">
+                            <label class="text-13 font-weight6">Doctor</label>
+                            <input type="text"id="doctor"class="form-control rounded-0" disabled value="{{ data.user.username }}" required>
+                            <div><input name="doctor_id" class="d-none" value="{{ data.doctor.id }}"></div>
+                        </div>
+                        <div class="form-group  m-2">
+                            <label class="text-13 font-weight6">Consultation Fee</label>
+                            <input type="text" name="fee"class="form-control rounded-0" disabled value="${{ data.doctor.consultation_fee }}" required>
+                        </div>
+                        <div class="form-group  m-2">
+                            <label class="text-13 font-weight6">Appointment Date</label>
+                            <input type="date" name="date"class="form-control rounded-0" required>
+                        </div>
+                        <div class="form-group  m-2">
+                            <label class="text-13 font-weight6">Appointment Time</label>
+                            <input type="time" name="time"class="form-control rounded-0" required>
+                        </div>
+                        <div class="form-group  m-2">
+                            <label class="text-13 font-weight6">Symptoms</label>
+                            <textarea class="form-control rounded-0" name="comment" required></textarea>
+                        </div>
+                        <div>
+                            <button class="btn w-100 rounded-0 bg-blue font-weight6 text-white text-center">Submit</button>
+                        </div>
+
+
+                    </form>
+                </div>
+                   <!-- <div class="col-md-7 p-2">
+                        <div class="pt-4">
+                            <h4 class="pl-3 p-2 m-0 ml-2">RECENT APPOINTMENTS</h4>
+
+                            <div class="container table-responsive pl-2 pt-2 py-5">
+                                <table class="table table-striped table-hover text-13 font-weight4">
+                                    <thead class="thead-dark">
+                                        <tr>
+                                            <th scope="col">#</th>
+                                            <th scope="col">Service</th>
+                                            <th scope="col">Doctor</th>
+                                            <th scope="col">Date and Time</th>
+                                            <th scope="col">Status</th>
+                                        </tr>
+                                      </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">1</th>
+                                            <td>{{ Oncology }}</td>
+                                            <td>Marting Garris</td>
+                                            <td>21 Oct 10.00a.m</td>
+                                            <td>Pending</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

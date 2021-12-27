@@ -1,0 +1,11 @@
+Flask
+Flask-SQLAlchemy
+Flask-Security
+Flask-Script
+mysqlclient
+email_validator
+bcrypt
+pandas
+joblib
+scikit_learn
+Flask-Bcrypt

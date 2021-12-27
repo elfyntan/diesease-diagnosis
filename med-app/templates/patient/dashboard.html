@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% block body %}
+    <div class="main-wrap">
+    <input id="slide-sidebar" type="checkbox" role="button" />
+        <label for="slide-sidebar" class="toggle-label"><span class="fa-stack fa-md "><i class="fa fa-th-list fa-stack-1x "></i></span></label>
+    <div class="sidebar position-fixed">
+        <div class="container p-1 pb-2 pt-3">
+            <h4 class="text-center heading text-orange font-weight9">
+                <span class="fa-stack fa-md"><i class="fa fa-dashboard fa-stack-1x "></i></span>
+                <span class="text-15">DASHBOARD</span>
+            </h4>
+        </div>
+        <div class="container">
+            <ul class="list-group list-unstyled text-13">
+            <li class="list-group-item"><a class="navbar-link text-black" href="/patient/book_appointment">
+                 <span class="fa-stack fa-md "><i class="fa fa-book fa-stack-1x "></i></span>Book Appointment</a></li>
+            <li class="list-group-item"><a class="navbar-link text-black" href="/patient/appointments-history">
+                 <span class="fa-stack fa-md "><i class="fa fa-history fa-stack-1x "></i></span>Appointments History</a></li>
+            <li class="list-group-item"><a class="navbar-link text-black" href="/dashboard">
+                 <span class="fa-stack fa-md "><i class="fa fa-ambulance fa-stack-1x " ></i></span>Diseases Diagnosis</a></li>
+            <li class="list-group-item"><a class="navbar-link text-black" href="/patient/prescriptions">
+                <span class="fa-stack fa-md "><i class="fa fa-plus-circle fa-stack-1x "></i></span> Prescriptions</a></li>
+            <li class="list-group-item"><a class="navbar-link text-black" href="/patient/profile">
+                 <span class="fa-stack fa-md "><i class="fa fa-wrench fa-stack-1x "></i></span>My Profile</a>
+            </li>
+                <li class="list-group-item">
+               <a href="#"  class="navbar-link text-black">
+                   <span class="fa-stack fa-md"><i class="fa fa-server fa-stack-1x "></i></span>Contact</a>
+            </li>
+        </ul>
+        </div>
+    </div>
+    <div class="portfolio">
+        <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+            <div class="container">
+                <a class="navbar-brand text-orange font-weight9" href="#">HD & M</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse  " id="navbarNav">
+                    <ul class="navbar-nav ms-auto font-weight6 text-14">
+                        <li class="nav-item m-2 mr-3">
+                          <a class="nav-link text-black" aria-current="page" href="#">
+                          <i class="fa fa-home p-1 pr-2 text-15"></i>Home</a>
+                        </li>
+                        <li class="nav-item m-2 mr-3">
+                          <a class="nav-link  pr-2 text-black" href="#"><i class="fa fa-info-circle p-1 pr-2 text-14"></i>About</a>
+                        </li>
+                        <li class="nav-item m-2 mr-3">
+                            <a class="nav-link text-black" href="{{ url_for('admin.logout_') }}">
+                                <i class="fa fa-sign-out p-1 pr-2 text-14"></i>Logout</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="dashboard container">
+           <div class="pt-1">
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                        {% for category,msg in messages %}
+                        <div class="card bg-{{ category }}">
+                            <div class="card-body p-1 text-white">
+                                <p class="text-13 font-weight6 m-1">{{ msg }}</p>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+                {% block dashboard_content %}
+                {% endblock %}
+           </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}

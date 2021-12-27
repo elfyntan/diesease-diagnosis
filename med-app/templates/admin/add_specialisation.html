@@ -1,0 +1,25 @@
+{% extends "admin/dashboard.html" %}
+{% block dashboard_content %}
+    <div class="container">
+        <div class="card">
+            <div class="card-body">
+                <div class=" col-md-4">
+                    <form method=post action="{{ url_for('admin.save_specialisation') }}" enctype=multipart/form-data role="form">
+                        <div class="form-group  m-2">
+                            <label>Name</label>
+                            <input type="text" placeholder="" class="form-control rounded-0" name="name" required>
+                        </div>
+                         <div class="form-group m-2">
+                            <label>Upload Image</label>
+                            <input type="file"  class="form-control rounded-0" placeholder="" name="file" required>
+                        </div>
+
+                        <div>
+                            <button type="submit" class="btn bg-blue rounded-0 text-center w-100">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

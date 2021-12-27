@@ -1,0 +1,54 @@
+{% extends "diseases/main.html" %}
+{% block disease_body %}
+    <div class="p-4" style="background: #F2F2F2">
+        <div class="p-3" >
+            <h4 class="font-weight8 text-center">Diabetes Prediction</h4>
+            <h5 class="font-weight6 text-center">Please enter the patient details</h5>
+        </div>
+        <div class="d-flex justify-content-center">
+            <div class="card"  style="width: 500px;">
+                <div class="card-body">
+
+    <form action="{{ url_for('main.predictt')}}"  style="width: 470px;" method="post" class="text-14 form-inline">
+            <div class="tabcontent" id="new">
+                 <div class="input-group d-flex justify-content-between m-2">
+                    <label for="pregnancies" class="font-weight6">Number of Pregnancies</label>
+                     <div><input class="form-control" type="number" name="pregnancies" placeholder="eg. 0 for male" required="required"/></div>
+                 </div>
+                  <div class="input-group d-flex justify-content-between m-2">
+                    <label for="glucose" class="font-weight6">Glucose Level (mg/dL)</label>
+                      <div><input class="form-control" type="number" name="glucose" placeholder="eg. 80" required="required"/></div>
+                  </div>
+                  <div class="input-group d-flex justify-content-between m-2">
+                    <label for="bloodpressure" class="font-weight6">Blood Pressure (mmHg)</label>
+                      <div><input class="form-control" type="number" name="bloodpressure" placeholder="eg. 80" required="required"/></div>
+                  </div>
+                  <div class="input-group d-flex justify-content-between m-2">
+                    <label for="skinthickness" class="font-weight6">Skin Thickness (mm)</label>
+                      <div><input class="form-control" type="number" name="skinthickness" placeholder="eg. 20" required="required"/></div>
+                  </div>
+                  <div class="input-group d-flex justify-content-between m-2">
+                    <label for="insulin" class="font-weight6">Insulin Level (IU/mL) </label>
+                      <div><input class="form-control" type="number" name="insulin" placeholder="eg. 80" required="required"/></div>
+                  </div>
+                  <div class="input-group d-flex justify-content-between m-2">
+                    <label for="bmi" class="font-weight6">Body Mass Index (kg/m²)</label>
+                      <div><input class="form-control" type="number" name="bmi" placeholder="eg. 23.1" required="required"/></div>
+                  </div>
+                  <div class="input-group d-flex justify-content-between m-2">
+                    <label for="dpf" class="font-weight6">Diabetes Pedigree Function</label>
+                      <div><input class="form-control" type="text" name="dpf" placeholder="eg. 0.52" required="required"/></div>
+                  </div>
+                  <div class="input-group d-flex justify-content-between m-2">
+                    <label for="age" class="font-weight6">Patient Age in Years</label>
+                      <div><input class="form-control" type="number" name="age" placeholder="eg. 34" required="required"/></div>
+                  </div>
+                <div class="m-2">
+                    <button type="submit" class="btn bg-blue text-white text-14 w-100 text-center">Predict</button>
+                </div></div>
+    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

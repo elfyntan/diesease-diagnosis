@@ -1,0 +1,109 @@
+{% extends "doctor/dashboard.html"%}
+{% block dashboard_content %}
+    <div class="container">
+        <div class="">
+            <div class="card  m-2 text-14">
+                <div class="card-body p-3">
+                    <h4 class="font-weight8 text-16">Doctor Details</h4>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="p-2 d-flex justify-content-between">
+                                <label class="font-weight7">Doctor Name:</label>
+                                <div>
+                                    <span>{{ data.doc_info }}</span>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div class="col-md-6">
+                             <div class="p-2 d-flex justify-content-between">
+                                <label class="font-weight7">Department:</label>
+                                <div ><span>{{ data.spec }}</span></div>
+                             </div>
+                        </div>
+                    </div>
+                     <div class="row">
+                        <div class="col-md-6">
+                             <div class="p-2 d-flex justify-content-between">
+                                <label class="font-weight7">Contact:</label>
+                                <div><span>{{ data.doc_info.phone }}</span></div>
+                             </div>
+                        </div>
+                        <div class="col-md-6">
+                             <div class="p-2  d-flex justify-content-between">
+                                <label class="font-weight7">Address</label>
+                                <div><address>{{ data.doc_info.location[0].street }}, {{ data.doc_info.location[0].city }},
+                                {{ data.doc_info.location[0].country }}</address></div>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+             <div class="card text-14 m-2">
+                <div class="card-body">
+                    <h4 class="font-weight8 text-16">Patient Details</h4>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="p-1  d-flex justify-content-between">
+                                <label class="font-weight7">Patient Name</label>
+                                <div><span>{{ data.patient_info }}</span></div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="p-1  d-flex justify-content-between">
+                                <label class="font-weight7">Address</label>
+                                <div><address>{{ data.patient_info.location[0].street }}, {{ data.patient_info.location[0].city }},
+                                {{ data.patient_info.location[0].country }}</address></div>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="row">
+                        <div class="col-md-6">
+                            <div class="p-1  d-flex justify-content-between">
+                                <label class="font-weight7">Contact </label>
+                                <div><span>{{ data.patient_info.phone }}</span></div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="p-1  d-flex justify-content-between">
+                                <label class="font-weight7">Date of Birth </label>
+                                <div><span>{{ data.patient.dob }}</span></div>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="row">
+                        <div class="col-md-6">
+                            <div class="p-1  d-flex justify-content-between">
+                                <label class="font-weight7">Age </label>
+                                <div><span>{{ data.patient_age }} Years</span></div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="p-1  d-flex justify-content-between">
+                                <label class="font-weight7">Gender </label>
+                                <div><span>{{ data.patient.gender }}</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+             <div class="card m-2 text-14">
+                <div class="card-body">
+                    <form method=post action="{{ url_for("doctor.save_prescription") }}" class="" role="form">
+                       <h4 class="font-weight8 text-16">Prescription Note</h4>
+                        <input class="d-none" name="patient_id" value="{{ data.patient.id }}">
+                        <input class="d-none" name="appointment_id" value="{{ data.app_id }}">
+                        <textarea class="form-control" name="prescription" style="min-height:125px;" required></textarea>
+                        <div class="m-2">
+                            <button type="submit" class="btn bg-blue w-25 text-white font-weight6">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends "admin/dashboard.html" %}
+{% block dashboard_content %}
+    <div class="container">
+        <div class="card shadow-sm">
+            <div class="card-body">
+
+            <div class="clearfix pr-4">
+                 <span class="text-14 font-weight7" style="margin-left: 20px">MANAGE DOCTORS</span>
+                <a href="/admin/add-doctor" class="btn bg-blue pull-right btn-sm w-25 font-weight9 text-13 text-uppercase  text-white">Add Doctor</a>
+            </div>
+            <div class="container table-responsive pt-2 py-5">
+            <table class="table table-striped table-hover font-weight7 text-14">
+              <thead class="thead-dark text-14">
+                <tr>
+                  <th scope="col">#</th>
+                     <th scope="col">Fullname</th>
+                  <th scope="col">Specialisation</th>
+                     <th scope="col">Created_at</th>
+                  <th scope="col">Email</th>
+                     <th scope="col">Consultation Fee</th>
+                     <th scope="col">Action</th>
+                </tr>
+              </thead>
+              <tbody >
+              {% for doctor in doctors  %}
+                   {% if doctor.user.active==1 %}
+              <tr>
+                <th>#001</th>
+                  <th class="font-weight4">{{ doctor.user.username }}</th>
+                  <th class="font-weight4">{{ doctor.spec.name }}</th>
+                   <th class="font-weight4">{{ doctor.user.created_at }}</th>
+                   <th class="font-weight4">{{ doctor.user.email }}</th>
+                    <th class="font-weight4">{{ doctor.doc.consultation_fee }}</th>
+                  <th class="font-weight4"><button class="btn btn-sm bg-blue text-white text-13">Edit</button>
+                      <a href="{{ url_for("admin.del_doctor", id=doctor.user.id) }}" class="btn btn-sm btn-danger text-13">Delete</a> </th>
+              </tr>
+                  {% endif %}
+              {% endfor %}
+              </tbody>
+            </table>
+            </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

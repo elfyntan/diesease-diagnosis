@@ -1,0 +1,55 @@
+{% extends "diseases/main.html" %}
+{% block disease_body %}
+    <div class="p-4" style="background: #F2F2F2">
+        <div class="p-3" >
+            <h4 class="font-weight8 text-center">Kidney Disease Prediction</h4>
+            <h5 class="font-weight6 text-center">Please enter the patient details</h5>
+        </div>
+        <div class="d-flex justify-content-center">
+            <div class="card"  style="width: 500px;">
+                <div class="card-body">
+                    <form action="{{ url_for('main.predictkidney')}}"  style="width: 470px;" method="post" class="text-14 form-inline">
+                            <div class="tabcontent" id="new">
+                                <div class="input-group d-flex justify-content-between m-2">
+                                    <label for="bp" class="font-weight6">Blood Pressure</label>
+                                    <div><input class="form-control" type="number" id="bp" name="Year" required="required" placeholder="Blood Pressure"></div>
+                                </div>
+                                <div class="input-group d-flex justify-content-between m-2">
+                                    <label for="sg" class="font-weight6">Specific Gravity</label>
+                                    <div><input class="form-control" type="number" step="any" id="sg" name="sg" required="required" placeholder="Specific Gravity"></div>
+                                </div>
+
+                                <div class="input-group d-flex justify-content-between m-2">
+                                    <label for="al" class="font-weight6">Albumin</label>
+                                    <div><input class="form-control" type="number" id="al" name="al" required="required" placeholder="Albumin"></div>
+                                </div>
+
+                                <div class="input-group d-flex justify-content-between m-2">
+                                    <label for="su" class="font-weight6">Blood Sugar Level</label>
+                                    <div><input class="form-control" type="number" id="su" name="su" required="required" placeholder="Blood Sugar Level"></div>
+                                </div>
+
+                                <div class="input-group d-flex justify-content-between m-2">
+                                    <label for="rbc" class="font-weight6">Red Blood Cells Count</label>
+                                    <div><input class="form-control" type="number" id="rbc" name="rbc" required="required" placeholder="Red Blood Cells Count"></div>
+                                </div>
+
+                                <div class="input-group d-flex justify-content-between m-2">
+                                    <label for="pc" class="font-weight6">Pus Cell Count</label>
+                                    <div><input class="form-control" type="number" id="pc" name="pc" required="required" placeholder="Pus Cell Count"></div>
+                                </div>
+
+                                <div class="input-group d-flex justify-content-between m-2">
+                                    <label for="pcc" class="font-weight6">Pus Cell Clumps</label>
+                                    <div><input class="form-control" type="number" id="pcc" name="pcc" required="required" placeholder="Pus Cell Clumps"></div>
+                                </div>
+                                <div class="m-2">
+                                    <button type="submit" class="btn bg-blue text-white text-14 w-100 text-center">Predict</button>
+                                </div>
+                            </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

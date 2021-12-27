@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block body %}
+    <h2 class="font-weight9 text-dark text-shadow1 pt-3 text-center">DISEASE DIAGNOSIS AND MANAGEMENT</h2>
+<div class="auth-container mt-1 mb-3">
+    <div class="d-flex justify-content-center">
+        <div class="p-lg-5 p-sm-3 p-md-4">
+            {% block auth_body %} {% endblock %}
+        </div>
+    </div>
+</div>
+    <div class="border-top p-2"></div>
+<footer class="site-footer pb-3">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-sm-8 col-xs-12">
+                <p class="copyright-text m-1 text-14">Copyright &copy; 2021 All Rights Reserved </p>
+            </div>
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <ul class="social-icons list-unstyled list-inline">
+                    <li><a class="facebook" href="#"><i class="typcn typcn-social-facebook"></i></a></li>
+                    <li><a class="twitter" href="#"><i class="typcn typcn-social-twitter"></i></a></li>
+                    <li><a class="linkedin" href="#"><i class="typcn typcn-social-linkedin"></i></a></li>
+                    <li><a class="dribbble" href="#"><i class="typcn typcn-phone-outline"></i></a></li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+{%  endblock body %}

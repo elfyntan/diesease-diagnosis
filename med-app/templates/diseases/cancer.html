@@ -1,0 +1,59 @@
+{% extends "diseases/main.html" %}
+{% block disease_body %}
+    <div class="p-4" style="background: #F2F2F2">
+
+    <div class="p-3" >
+        <h4 class="font-weight8 text-center">Breast Cancer Prediction</h4>
+        <h5 class="font-weight6 text-center">Please enter the patient details</h5>
+    </div>
+    <div class="d-flex justify-content-center">
+        <div class="card"  style="width: 500px;">
+            <div class="card-body">
+            <form action="{{ url_for('main.predict')}}" style="width: 470px;" method="post" class="text-14 form-inline" style="width: 400px;">
+                <div class="tabcontent" id="new">
+                     <div class="input-group d-flex justify-content-between m-2">
+                        <label for="clump_thickness" class="font-weight6">Clump Thickness </label>
+                         <div><input type="number" class="form-control" name="clump_thickness" required="required"></div>
+                     </div>
+                      <div class="input-group d-flex justify-content-between m-2">
+                        <label for="uniform_cell_size" class="font-weight6">Uniform Cell size</label>
+                          <div><input type="number" class="form-control" name="uniform_cell_size" required="required"></div>
+                      </div>
+                      <div class="input-group d-flex justify-content-between m-2">
+                        <label for="uniform_cell_shape" class="font-weight6">Uniform Cell shape</label>
+                        <div><input type="number" class="form-control" name="uniform_cell_shape" required="required" /></div>
+                      </div>
+                      <div class="input-group d-flex justify-content-between m-2">
+                        <label for="marginal_adhesion " class="font-weight6">Marginal Adhesion</label>
+                        <div><input type="number" class="form-control" name="marginal_adhesion" required="required" /></div>
+                      </div>
+                      <div class="input-group d-flex justify-content-between m-2">
+                        <label for="single_epithelial_size" class="font-weight6">Single Epithelial Cell Size</label>
+                        <div><input type="number" class="form-control" name="single_epithelial_size" required="required" /></div>
+                      </div>
+                      <div class="input-group d-flex justify-content-between m-2">
+                        <label for="bare_nuclei" class="font-weight6">Bare Nuclei</label>
+                        <div><input type="number" class="form-control" name="bare_nuclei" required="required" /></div>
+                      </div>
+                      <div class="input-group d-flex justify-content-between m-2">
+                        <label for="bland_chromatin" class="font-weight6">Bland Chromatin</label>
+                        <div><input type="number" class="form-control" name="bland_chromatin" required="required" /></div>
+                      </div>
+                      <div class="input-group d-flex justify-content-between m-2">
+                        <label for="normal_nucleoli" class="font-weight6">Normal Nucleoli</label>
+                        <div><input type="number" class="form-control" name="normal_nucleoli" required="required" /></div>
+                      </div>
+                      <div class="input-group d-flex justify-content-between m-2">
+                        <label for="mitoses" class="font-weight6">Mitoses</label>
+                        <div><input type="number" class="form-control" name="mitoses" required="required" /></div>
+                      </div>
+                      <div class="m-2">
+                          <button type="submit" class="btn bg-blue text-white text-14 w-100 text-center">Predict</button>
+                      </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    </div>
+{% endblock %}

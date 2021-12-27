@@ -1,0 +1,125 @@
+{% extends "diseases/main.html" %}
+{% block disease_body %}
+    <div class="p-4" style="background: #F2F2F2">
+        <div class="p-3" >
+            <h4 class="font-weight8 text-center">Heart Disease Prediction</h4>
+            <h5 class="font-weight6 text-center">Please enter the patient details</h5>
+        </div>
+        <div class="d-flex justify-content-center">
+            <div class="card"  style="width: 500px;">
+                <div class="card-body">
+                    <form action="{{ url_for('main.predictheart')}}"  style="width: 470px;" method="post" class="text-14 form-inline">
+                    <div class="tabcontent" id="new">
+                         <div class="input-group d-flex justify-content-between m-2">
+                            <label for="age" class="font-weight6">Age in Years</label>
+                             <div><input class="form-control" type="number" name="age" placeholder="eg. 34" required="required"/></div>
+                         </div>
+                         <div class="input-group d-flex justify-content-between m-2">
+                            <label for="trestbps" class="font-weight6">Trest Bps</label>
+                             <div><input class="form-control" type="number" name="trestbps" placeholder="trestbps" required="required"/></div>
+                         </div>
+                         <div class="input-group d-flex justify-content-between m-2">
+                            <label for="chol" class="font-weight6">Cholesterol</label>
+                             <div><input class="form-control" type="number" name="chol" placeholder="chol" required="required"/></div></div>
+                        <div class="input-group d-flex justify-content-between m-2">
+                            <label for="thalach" class="font-weight6">Thalach</label>
+                            <div><input class="form-control" type="number" name="thalach" placeholder="thalach" required="required"/></div>
+                        </div>
+                        <div class="input-group d-flex justify-content-between m-2">
+                            <label for="oldpeak" class="font-weight6">Old Peak</label>
+                            <div><input class="form-control" type="number" name="oldpeak" placeholder="oldpeak" required="required"/></div>
+                        </div>
+                        <div class="input-group d-flex justify-content-between m-2">
+                            <label for="sex_0" class="font-weight6">Sex_0</label>
+                            <div><input class="form-control" type="number" name="sex_0" placeholder="sex_0" required="required"/></div>
+                        </div>
+                       <div class="input-group d-flex justify-content-between m-2">
+                            <label for="sex_1" class="font-weight6">Sex_1</label>
+                           <div><input class="form-control" type="number" name="sex_1" placeholder="sex_1" required="required"/></div>
+                      </div>
+                   <div class="input-group d-flex justify-content-between m-2">
+                        <label for="CP_0" class="font-weight6">CP_0</label>
+                       <div><input class="form-control" type="number" name="CP_0" placeholder="CP_0" required="required"/></div>
+                   </div>
+                   <div class="input-group d-flex justify-content-between m-2">
+                    <label for="CP_1" class="font-weight6">CP_1</label>
+                       <div><input class="form-control" type="number" name="CP_1" placeholder="CP_1" required="required"/></div>
+                  </div>
+                   <div class="input-group d-flex justify-content-between m-2">
+                        <label for="CP_2" class="font-weight6">CP_2</label>
+                       <div><input class="form-control" type="number" name="CP_2" placeholder="CP_2" required="required"/></div>
+                  </div>
+                   <div class="input-group d-flex justify-content-between m-2">
+                        <label for="CP_3" class="font-weight6">CP_3</label>
+                       <div><input class="form-control" type="number" name="CP_3" placeholder="CP_3" required="required"/></div>
+                   </div>
+                   <div class="input-group d-flex justify-content-between m-2">
+                        <label for="fbs_0" class="font-weight6">FBS_0</label>
+                       <div><input class="form-control" type="number" name="FBS_0" placeholder="FBS_0" required="required"/></div>
+                  </div>
+                   <div class="input-group d-flex justify-content-between m-2">
+                        <label for="restecg_0" class="font-weight6">RESTECG_0</label>
+                       <div><input class="form-control" type="number" name="restecg_0" placeholder="restecg_0" required="required"/></div>
+                  </div>
+                   <div class="input-group d-flex justify-content-between m-2">
+                        <label for="restecg_1" class="font-weight6">RESTECG_1</label>
+                       <div><input class="form-control" type="number" name="restecg_1" placeholder="restecg_1" required="required"/></div>
+                  </div>
+                   <div class="input-group d-flex justify-content-between m-2">
+                        <label for="restecg_2" class="font-weight6">RESTECG_2</label>
+                       <div><input class="form-control" type="number" name="restecg_2" placeholder="restecg_2" required="required"/></div>
+                  </div>
+                   <div class="input-group d-flex justify-content-between m-2">
+                        <label for="exang_0" class="font-weight6">EXANG_0</label>
+                       <div><input class="form-control" type="number" name="EXANG_0" placeholder="EXANG_0" required="required"/></div>
+                  </div>
+                   <div class="input-group d-flex justify-content-between m-2">
+                        <label for="exang_1" class="font-weight6">EXANG_1</label>
+                       <div><input class="form-control" type="number" name="EXANG_1" placeholder="EXANG_1" required="required"/></div>
+                  </div>
+                   <div class="input-group d-flex justify-content-between m-2">
+                        <label for="slope_0" class="font-weight6">SLOPE_0</label>
+                       <div><input class="form-control" type="number" name="SLOPE_0" placeholder="SLOPE_0" required="required"/></div>
+                  </div>
+                   <div class="input-group d-flex justify-content-between m-2">
+                        <label for="slope_1" class="font-weight6">SLOPE_1</label>
+                       <div><input class="form-control" type="number" name="SLOPE_1" placeholder="SLOPE_1" required="required"/></div>
+                  </div>
+                   <div class="input-group d-flex justify-content-between m-2">
+                        <label for="slope_2" class="font-weight6">SLOPE_2</label>
+                       <div><input class="form-control" type="number" name="SLOPE_2" placeholder="SLOPE_2" required="required"/></div>
+                  </div>
+                   <div class="input-group d-flex justify-content-between m-2">
+                        <label for="CA_0" class="font-weight6">CA_0</label>
+                       <div><input class="form-control" type="number" name="CA_0" placeholder="CA_0" required="required"/></div>
+                  </div>
+                   <div class="input-group d-flex justify-content-between m-2">
+                        <label for="CA_1" class="font-weight6">CA_1</label>
+                       <div><input class="form-control" type="number" name="CA_1" placeholder="CA_1" required="required"/></div>
+                  </div>
+                   <div class="input-group d-flex justify-content-between m-2">
+                        <label for="CA_2" class="font-weight6">CA_2</label>
+                       <div><input class="form-control" type="number" name="CA_2" placeholder="CA_2" required="required"/></div>
+                  </div>
+                   <div class="input-group d-flex justify-content-between m-2">
+                        <label for="THAL_1" class="font-weight6">THAL_1</label>
+                       <div><input class="form-control" type="number" name="THAL_1" placeholder="THAL_1" required="required"/></div>
+                  </div>
+                   <div class="input-group d-flex justify-content-between m-2">
+                        <label for="THAL_2" class="font-weight6">THAL_2</label>
+                       <div><input class="form-control" type="number" name="THAL_2" placeholder="THAL_2" required="required"/></div>
+                  </div>
+                   <div class="input-group d-flex justify-content-between m-2">
+                        <label for="THAL_3" class="font-weight6">THAL_3</label>
+                       <div><input class="form-control" type="number" name="THAL_3" placeholder="THAL_3" required="required"/></div>
+                  </div>
+                <div class="m-2">
+                  <button type="submit" class="btn bg-blue text-white text-14 w-100 text-center">Predict</button>
+                </div>
+            </div>
+    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

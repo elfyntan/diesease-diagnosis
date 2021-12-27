@@ -1,0 +1,203 @@
+{% extends "base.html" %}
+{% block body %}
+    <header class="" >
+        <div  class="bg-blue">
+            <nav class="container navbar navbar-expand-sm top-nav" >
+                <div class="container-fluid">
+                    <ul class="navbar-nav ml-auto mr-3 mb-sm-0 text-12 text-white">
+                        <li class="nav-item">
+                            <a class="dribbble text-white mr-3" style="margin-right: 20px" href="#"><i class="typcn typcn-phone-outline"></i>(+263) 777 547 547</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class=" mr-2 text-white" style="margin-left: 20px"><i class="typcn typcn-location"></i> 1234 Clovadale Rd Ruwa, HARARE, ZIMBAWE</a>
+                        </li>
+                    </ul>
+
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                <ul class="social-icons list-unstyled list-inline pull-right" style="margin-right: 20px">
+                    <li><a class="facebook" href="#"><i class="typcn typcn-social-facebook"></i></a></li>
+                    <li><a class="twitter" href="#"><i class="typcn typcn-social-twitter"></i></a></li>
+                    <li><a class="linkedin" href="#"><i class="typcn typcn-social-linkedin"></i></a></li>
+                </ul>
+            </div>
+            </nav>
+        </div>
+
+        <div class="container">
+            <nav class="navbar navbar-expand-sm navbar-light bg-white text bottom-nav">
+                <div class="container-fluid p-2">
+                    <a class="navbar-brand col-md-4 text-uppercase" href="#"><h6 class="font-weight9">Health Management System</h6></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse"  id="navbarsExample03">
+                        <ul class="navbar-nav ms-auto mb-sm-0 text-12 font-weight7">
+                            <li class="nav-item">
+                                <a class="nav-link active text-uppercase" aria-current="page" href="/">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-uppercase" href="/about">About Us</a>
+                            </li>
+                            <!--<li class="nav-item">
+                                <a class="nav-link text-uppercase" href="/contact" >Contact Us</a>
+                            </li>-->
+                             <li class="nav-item">
+                                <a class="nav-link text-uppercase" href="/dashboard" >Disease Diagnosis</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-uppercase" href="/patient/appointments" >Appointments</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-uppercase" href="/login" >Login</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="" >
+        <div id="section1" class="home-bg">
+            <div class="container ml-3">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h6 class="font-weight9 text-uppercase txt-shadow1 pt-4 pb-3 text-orange" >Proffessional Health Care</h6>
+                        <p class="txt-shadow2 mb-4 font-weight9 text-white">Everyday we bring hope and smile to the patient we serve!</p>
+                        <a class="btn bg-orange text-white text-center font-weight6  btn-learn1" href="/about">LEARN MORE</a>
+                    </div>
+              </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="" >
+        <div class="container">
+            <div class="row">
+            <div class="col-md-5">
+                <div class="card shadow p-2 border-0  position-absolute" height="350px"
+                     style="width: 350px; top: 85%; left:13%; border-radius: 10px!important;">
+                         <div class="card-title container pb-1 pt-3">
+                            <h6 class="text-gray font-weight5 pl-3 pr-3 text-14">REQUEST FOR YOUR</h6>
+                            <h2 class="text-black font-weight9 pl-3 pr-3 ">Consultation</h2>
+                        </div>
+                    <form class="card-body p-1">
+                        <div class="form-group m-2">
+                            <input class="form-control " placeholder="Name" type="text">
+                        </div>
+                         <div class="form-group m-2">
+                            <input class="form-control" placeholder="Email" type="email">
+                        </div>
+                         <div class="form-group m-2">
+                            <input class="form-control " type="date" placeholder="Date">
+                        </div>
+                         <div class="form-group m-2">
+                            <select class="form-control ">
+                                Type of service
+                                <option selected>Choose service...</option>
+                                <option>Option 1</option>
+                                <option>Option 2</option>
+                            </select>
+                        </div>
+                        <div class="m-2 pt-2 pb-3">
+                            <button type="submit" class="btn bg-blue font-weight7 text-white text-center w-100">Book Appointment</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-7">
+                <div class="row">
+                    <div class="col-md-6 p-1">
+                         <div class="card border-0" >
+                             <div class="card-title">
+                                 <h4 class="pt-3 font-weight9 pb-3">Emergency Case</h4>
+                                 <div class="card-bord text-gray">
+                                     If you need a doctor urgently outside of medical center opening hours, call emegency
+                                        appointment number for emergency service
+                                 </div>
+                                 <div class="p-5 border mt-5 m-2 bg-blue text-center rounded">
+                                     <h5 class="text-white font-weight9"><i>+263 8677 008667</i></h5>
+                                 </div>
+                             </div>
+
+                        </div>
+                    </div>
+                     <div class="col-md-6 p-1 " >
+                        <div class="card border-0" style="min-height: 400px">
+                            <div class="card-body p-1 hm-card">
+                                <h4 class="pt-3 pb-3 font-weight9">Opening Hours</h4>
+                                <ul class="list-group list-unstyled text-gray border-0 text-14 font-weight6 text-dark" >
+                                    <li class="list-group-item d-flex justify-content-between border-left-0" ><span>Monday - Friday</span> <span>8.00 -1800</span></li>
+                                    <li class="list-group-item d-flex justify-content-between"><span>Saturday</span> <span> 9.30 -17.30</span> </li>
+                                    <li class="list-group-item d-flex justify-content-between"><span>Sunday</span> <span>9.30 -15.00</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <footer >
+       <div class="bg-dark text-white" style="min-height: 300px;">
+    <div class="container p-5">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="p-4 col-md-10">
+                    <div class="d-flex justify-content-between">
+                        <h4 class="font-weight9">DISEASE DIAGNOSIS APP</h4>
+                        <div class="social-icons">
+                            <i class="typcn typcn-social-facebook mr-2"></i>
+                            <i class="typcn typcn-social-twitter"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <span class="p-2">The span element doesn't mean anything on its own, but can be useful</span><br>
+                        <span class="font-weight9" style="font-size: 15px;">Privacy Policy</span>
+                    </div>
+                    <div class="pt-3">
+                        <p class="font-weight5" style="font-size: 15px;" >Copyright @2021;</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                    <div class="float-right">
+                        <h4 class="font-weight9">ADDRESS</h4>
+                        <address class="d-flex flex-column">
+                            <span>1234 Clovadale Rd Ruwa</span>
+                            <span>Harare</span>
+                            <span>ZIMBABWE</span>
+                        </address>
+                        <span>tel: 901-320-3599</span>
+                    </div>
+
+                    <nav class="navbar  navbar-expand-md navbar-light">
+                        <ul class="navbar-nav text-13">
+                            <li class="nav-item">
+                              <a class="nav-link font-weight6 text-white" aria-current="page" href="/">HOME</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link font-weight6 text-white" href="/about">ABOUT</a>
+                            </li>
+                            <!--<li class="nav-item">
+                              <a class="nav-link font-weight6 text-white" href="#salary00">CONTACT</a>
+                            </li>-->
+                            <li class="nav-item">
+                              <a class="nav-link font-weight6 text-white" href="/dashboard">DISEASE DIAGNOSIS</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link font-weight6 text-white" href="/appointments">APPOINTMENTS</a>
+                            </li>
+                          </ul>
+                    </nav>
+            </div>
+        </div>
+    </div>
+</div>
+    </footer>
+ {% endblock %}

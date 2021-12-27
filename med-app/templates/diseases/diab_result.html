@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+    {% block body %}
+    <div id="assess" style=" padding-top: 3rem;
+    padding-bottom: 3rem;
+    color: #5a5a5a;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;">
+        <div style="max-width: 700px;" class=" px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center container">
+            <h1 class="display-6">Diseases Diagnosis</h1>
+            <p class="lead">Please find below the Disease Diagnosis Results</p>
+        </div>
+        <div class="container themed-container " style="
+        padding: 15px;
+        margin-bottom: 30px;
+        background-color: rgba(0, 123, 255, .15);
+        border: 1px solid rgba(0, 123, 255, .2);
+    "><h1 style="text-align: center;">
+		{% if prediction==1 %}
+				<span>Patient has a high risk of Diabetes</span>
+
+		{% elif prediction==0 %}
+				<span>Patient has a low risk of Diabetes</span>
+
+		{% endif %}</h1></div>
+        <p style="text-align: center;">Click <a href="/disindex">here</a> to learn more about Kidney Disease</p>
+        <p style="text-align: center;">&copy;diseases.diagnosis.com</p>
+    </div>
+    <br/>
+{% endblock %}

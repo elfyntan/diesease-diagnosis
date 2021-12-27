@@ -1,0 +1,46 @@
+{% extends "patient/dashboard.html" %}
+{% block dashboard_content %}
+    <div class="container book-appointment">
+        <div class="d-flex justify-content-center">
+            <div class="col-md-10">
+                <div class="row">
+                    {% for data in services %}
+                        {% if data.doctors | length > 0 %}
+                        <div class="col-md-3 p-1 col-lg-3">
+                            <div class="card img-card p-1">
+                               <div class="card-body p-1">
+                                    <div class="caption text-center">
+                                        <p class="m-1 font-weight8 text-14">{{ data.service }}</p>
+                                    </div>
+                                   <div class="d-flex justify-content-center tex-center">
+                                       <div class="image ">
+                                            <img src="{{ url_for('static',filename='uploads/'+data.service.image)}}">
+                                        </div>
+                                   </div>
+
+                                    <div>
+                                        <h6 class="font-weight6 p-3 pt-1 pb-1 text-13 text-center">Choose Doctor ...</h6>
+                                        {% if data.doctors != [] %}
+                                            <ul style="height: 100px; overflow-y: scroll"
+                                                class="list-group text-13 font-weight5  border-0 rounded-0 remove-bl-br">
+                                                    {% for doctor in data.doctors %}
+                                                    <li class="list-group-item doc-list-item" >
+
+                                                        <a href="{{url_for('patient.book_appointment', id=doctor.user.id) }}"
+                                                           class="text-dark doc-link">{{ doctor.user.username }}</a> </li>
+                                                    {% endfor %}
+                                            </ul>
+                                        {% endif %}
+                                    </div>
+
+                               </div>
+                            </div>
+                        </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}
